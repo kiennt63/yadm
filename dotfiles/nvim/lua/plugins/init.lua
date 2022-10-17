@@ -83,6 +83,7 @@ return packer.startup(function(use)
       cmake --build build --config Release && \
       cmake --install build --prefix build'
     }
+    use 'nvim-telescope/telescope-media-files.nvim'
 
     -- Gitsigns
     use {
@@ -116,9 +117,11 @@ return packer.startup(function(use)
     require 'plugins/bufferline'
     require 'plugins/cmp'
     require 'plugins/telescope'
+    require('telescope').load_extension('media_files')
     require 'plugins/nvim-tree'
     require 'plugins/treesitter'
     require 'plugins/toggleterm'
+    require 'plugins/autosession'
 
     require("mason").setup {}
     require("mason-lspconfig").setup {

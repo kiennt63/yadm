@@ -12,7 +12,7 @@ require('lualine').setup {
       statusline = {},
       winbar = {},
     },
-    ignore_focus = {},
+    ignore_focus = {'NvimTree'},
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
@@ -25,8 +25,8 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_d = {require('auto-session-library').current_session_name},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    -- lualine_d = {require('auto-session-library').current_session_name},
+    lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

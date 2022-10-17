@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -41,6 +41,17 @@ keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<leader>bd", ":Bdelete<CR>", opts)
+keymap("n", "<A-1>", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
+keymap("n", "<A-2>", "<cmd>BufferLineGoToBuffer 2<CR>", opts)
+keymap("n", "<A-3>", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
+keymap("n", "<A-4>", "<cmd>BufferLineGoToBuffer 4<CR>", opts)
+keymap("n", "<A-5>", "<cmd>BufferLineGoToBuffer 5<CR>", opts)
+keymap("n", "<A-6>", "<cmd>BufferLineGoToBuffer 6<CR>", opts)
+keymap("n", "<A-7>", "<cmd>BufferLineGoToBuffer 7<CR>", opts)
+keymap("n", "<A-8>", "<cmd>BufferLineGoToBuffer 8<CR>", opts)
+keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
+keymap("n", "<A-n>", "<cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "<A-p>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
@@ -74,8 +85,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Telescope
 -- keymap("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-p>",
     "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
     , opts)
 keymap("n", "<c-f>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope media_files<cr>", opts)
+
